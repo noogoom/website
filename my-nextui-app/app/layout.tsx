@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   icons: {
-    icon: "/favicon.ico",
+    icon: "/image.png",
   },
 };
 
@@ -34,18 +34,24 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en">
-      <head />
+      <head>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
       <body
         className={clsx(
           "min-h-screen font-sans antialiased",
           fontSans.variable,
         )}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+        <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
           <div className="relative flex flex-col h-screen">
-            <main className="container mx-auto pt-16 px-6 flex-grow">
+            <main className="light container mx-auto pt-16 px-6 flex-grow">
               {children}
             </main>
+            <div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=HAGT_RgyE-71zT5o&amp;list=PLd4YajkcrhkFV30j6bcCQxptsOj0s_FEO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              Potato
+              </div>
           </div>
         </Providers>
       </body>

@@ -11,27 +11,41 @@ import { Card, CardBody, CardHeader } from "@nextui-org/card";
 
 import { Image } from "@nextui-org/image";
 import { Divider } from "@nextui-org/divider";
-const chipContents = ['emojis', 'sustainability', 'art', 'figma', 'يمن']
+import { useTheme } from "next-themes";
+
+
+
+
+const chipContents = ['emojis ✨', 'sustainability 🌱', 'art', 'figma', 'يمن']
 const cardContents = [
-  {title: 'Work', content: 'Software Engineer / UX Engineer', icon: 'keyboard'},
-  {title: 'Studies', content: 'Masters in Media Computer Science', icon: 'school'},
-  {title: 'Private Stuff', contentChips: ['Drawing', 'Choir', 'Languages'], icon: 'stock_media'}]
+  {title: 'work', content: 'Software Engineer / UX Engineer', icon: 'keyboard'},
+  {title: 'studies', content: 'Masters in Media Computer Science', icon: 'school'},
+  {title: 'private stuff', contentChips: ['Drawing', 'Choir', 'Languages'], icon: 'stock_media'}]
 
-  // function IconDisplay({ iconName }){
-  //   const icons = {
-  //   BeakerIcon,
-  // HomeIcon,
-  //  UserIcon,
-  // };}
 
+  // export const ThemeSwitcher = () => {
+  //   const { theme, setTheme } = useTheme()
+  
+  //   return (
+  //     <div>
+  //       The current theme is: {theme}
+  //       <button onClick={() => setTheme('light')}>Light Mode</button>
+  //       <button onClick={() => setTheme('dark')}>Dark Mode</button>
+  //     </div>
+  //   )
+  // };
+
+  
 export default function Home() {
+  // const { theme, setTheme } = useTheme(); 
+
   return (
     <div className="flex flex-col h-full gap-6">
       <main>
         <div className="flex flex-row gap-10">
         <Image
       width={150}
-      alt="NextUI hero Image"
+      alt="Moon Picture"
       src="/image.png"
     />
         <div className="flex flex-col w-full gap-10">
@@ -48,10 +62,13 @@ export default function Home() {
 
 <div className="gap-3 grid grid-cols-3 lg:grid-cols-3 w-full">
 {cardContents.map((item, index) => (
-  <Card shadow="sm" key={index} className="p-4" isPressable>
-    <CardHeader className="justify-center"><h2>{item.title}</h2></CardHeader>
+  <Card shadow="sm" key={index} className="p-4 skillCard flex justify-center" isPressable>
+    <CardHeader className="flex flex-col justify-center gap-4">
+      <span className="material-symbols-outlined item-icon">{item.icon}</span>
+      <h2 className="text-2xl font-['Gupter'] tracking-widest text-indigo-400">{item.title}</h2>
+      </CardHeader>
     <CardBody className="overflow-visible">
-      <div className="flex gap-4">
+      <div className="flex gap-4 justify-center">
     {item.content}
     {item.contentChips?.map((chip) => (
       <Chip variant="shadow" 

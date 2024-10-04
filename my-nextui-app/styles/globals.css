@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: 'Inter'
+}
+
 .pretty-chips {
-    @apply bg-gradient-to-br from-indigo-500 to-pink-500 shadow-pink-500/30;
+    @apply bg-gradient-to-r from-indigo-500 from-10% via-violet-600 via-65% to-indigo-500;
+    color: white;
+    &:hover {
+      @apply shadow-pink-500/30;
+    }
+  }
+
+  .skill-card {
+    height: 260px;
+  }
+
+  .item-icon {
+font-size: 3em !important;
+@apply bg-gradient-to-r from-indigo-500 from-10% via-sky-600 via-65% to-indigo-500 bg-clip-text text-transparent;
   }
