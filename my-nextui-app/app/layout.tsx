@@ -44,7 +44,12 @@ export default function RootLayout({
           fontSans.variable,
         )}>
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
-          <div className="relative flex flex-col h-screen bg-gradient-to-br from-amber-50 to-fuchsia-300">
+          <div
+            className="relative flex flex-col h-screen"
+            style={{
+              backgroundImage:
+                "linear-gradient(to bottom right, var(--gradient-bg-start), var(--gradient-bg-end))",
+            }}>
             <main className="light container mx-auto pt-16 px-6 flex-grow">
               {children}
             </main>

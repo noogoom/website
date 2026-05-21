@@ -1,9 +1,12 @@
+"use client";
+
 import { Card, CardBody, CardHeader } from "@nextui-org/card";
 import { Chip } from "@nextui-org/chip";
 
 import { Divider } from "@nextui-org/divider";
 import { Image } from "@nextui-org/image";
 import { Navbar } from "@/components/navbar";
+import { useTheme } from "next-themes";
 
 const chipContents = ["emojis ✨", "sustainability 🌱", "art", "figma", "يمن"];
 const cardContents = [
@@ -24,28 +27,19 @@ const cardContents = [
   },
 ];
 
-// export const ThemeSwitcher = () => {
-//   const { theme, setTheme } = useTheme()
-
-//   return (
-//     <div>
-//       The current theme is: {theme}
-//       <button onClick={() => setTheme('light')}>Light Mode</button>
-//       <button onClick={() => setTheme('dark')}>Dark Mode</button>
-//     </div>
-//   )
-// };
-
 export default function Home() {
-  // const { theme, setTheme } = useTheme();
-
+  const { theme } = useTheme();
   return (
     <div className="flex flex-row gap-2 ">
       <Navbar />
       <div className="flex flex-col gap-6 h-full">
-        <Image width={150} alt="Moon Picture" src="/sun.png" />
+        {theme === "light" ? (
+          <Image width={150} alt="Sun Picture" src="/sun.png" />
+        ) : (
+          <Image width={150} alt="Moon Picture" src="/image.png" />
+        )}
         <span className="text-4xl font-bold">Hi, I'm Sarah</span>
-        <span className="text-2xl text-gray-500">
+        <span className="text-2xl text-[hsl(var(--nextui-foreground-600))]">
           I'm a software engineer with a passion for user experience and design.
         </span>
         <div className="flex gap-4">

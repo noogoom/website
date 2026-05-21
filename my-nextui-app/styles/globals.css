@@ -2,23 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Light theme */
+:root,
+.light,
+[data-theme="light"] {
+  --gradient-bg-start: oklch(98.7% 0.022 95.277);
+  --gradient-bg-end: oklch(83.3% 0.145 321.434);
+}
+
+/* Dark theme */
+.dark,
+[data-theme="dark"] {
+  --gradient-bg-start: hsl(var(--nextui-primary-100));
+  --gradient-bg-end: hsl(var(--nextui-secondary-400));
+}
+
 body {
-  font-family: 'Inter'
+  font-family: "Inter";
 }
 
 .pretty-chips {
-    @apply bg-gradient-to-r from-indigo-500 from-10% via-violet-600 via-65% to-indigo-500;
-    color: white;
-    &:hover {
-      @apply shadow-pink-500/30;
-    }
+  @apply bg-gradient-to-r from-indigo-500 from-10% via-violet-600 via-65% to-indigo-500;
+  color: hsl(var(--nextui-foreground-100));
+  &:hover {
+    /* @apply shadow-pink-500/30; */
   }
+}
 
-  .skill-card {
-    height: 260px;
-  }
+.skill-card {
+  height: 260px;
+}
 
-  .item-icon {
-font-size: 3em !important;
-@apply bg-gradient-to-r from-indigo-500 from-10% via-sky-600 via-65% to-indigo-500 bg-clip-text text-transparent;
-  }
+.item-icon {
+  font-size: 3em !important;
+  @apply bg-gradient-to-r from-indigo-500 from-10% via-sky-600 via-65% to-indigo-500 bg-clip-text text-transparent;
+}

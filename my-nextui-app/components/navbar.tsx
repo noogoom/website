@@ -1,7 +1,7 @@
-import { link as linkStyles } from "@nextui-org/theme";
-import clsx from "clsx";
+"use client";
 
 import { siteConfig } from "@/config/site";
+import { ThemeSwitch } from "./theme-switch";
 
 export const Navbar = () => {
   return (
@@ -16,6 +16,7 @@ export const Navbar = () => {
             </li>
           ))}
         </ul>
+        <ThemeSwitch />
       </header>
     </nav>
   );
