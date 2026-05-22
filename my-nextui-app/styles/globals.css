@@ -2,19 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Light theme */
-:root,
-.light,
-[data-theme="light"] {
-  --gradient-bg-start: oklch(98.7% 0.022 95.277);
-  --gradient-bg-end: oklch(83.3% 0.145 321.434);
-}
+:root {
+  /** Themes
+    * xx: x-300
+    * xx-background: xx-50
+    * on-xx-background: xx-900
+    */
 
-/* Dark theme */
-.dark,
-[data-theme="dark"] {
-  --gradient-bg-start: hsl(var(--nextui-primary-100));
-  --gradient-bg-end: hsl(var(--nextui-secondary-400));
+  /** Light theme
+    * https://tailwindcss.com/docs/colors
+    * primary: amber, secondary: fuchsia
+    */
+  &.light,
+  [data-theme="light"] {
+    --primary: oklch(87.9% 0.169 91.605);
+    --primary-background: oklch(98.7% 0.022 95.277);
+    --on-primary-background: oklch(41.4% 0.112 45.904);
+    --secondary: oklch(82.3% 0.12 346.018);
+    --secondary-background: oklch(90.5% 0.12 346.018);
+    --on-secondary-background: oklch(40.1% 0.17 325.612);
+  }
+
+  /* Dark theme */
+  &.dark,
+  [data-theme="dark"] {
+    --primary: hsl(var(--nextui-primary-400));
+    --primary-background: hsl(var(--nextui-primary-100));
+    --on-primary-background: hsl(var(--nextui-primary-900));
+    --secondary: hsl(var(--nextui-secondary-400));
+    --secondary-background: hsl(var(--nextui-secondary-100));
+    --on-secondary-background: hsl(var(--nextui-secondary-900));
+  }
+
+  --nextui-content1: transparent;
+  --decorative-gradient: linear-gradient(
+    to bottom right,
+    var(--primary-background),
+    var(--secondary)
+  );
 }
 
 body {
@@ -22,8 +47,9 @@ body {
 }
 
 .pretty-chips {
-  @apply bg-gradient-to-r from-indigo-500 from-10% via-violet-600 via-65% to-indigo-500;
-  color: hsl(var(--nextui-foreground-100));
+  color: var(--on-primary-background);
+  background: transparent;
+  border: 1px solid var(--secondary);
   &:hover {
     /* @apply shadow-pink-500/30; */
   }

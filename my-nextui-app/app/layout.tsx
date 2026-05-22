@@ -6,6 +6,7 @@ import { Providers } from "./providers";
 
 import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
+import { Navbar } from "@/components/navbar";
 
 export const metadata: Metadata = {
   title: {
@@ -47,10 +48,10 @@ export default function RootLayout({
           <div
             className="relative flex flex-col h-screen"
             style={{
-              backgroundImage:
-                "linear-gradient(to bottom right, var(--gradient-bg-start), var(--gradient-bg-end))",
+              backgroundImage: "var(--decorative-gradient)",
             }}>
-            <main className="light container mx-auto pt-16 px-6 flex-grow">
+            <Navbar />
+            <main className="container mt-16 mx-auto pt-16 px-6 flex-grow">
               {children}
             </main>
             <div>
