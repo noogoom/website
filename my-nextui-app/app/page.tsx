@@ -9,17 +9,17 @@ import { useTheme } from "next-themes";
 const chipContents = ["emojis ✨", "sustainability 🌱", "art", "figma", "يمن"];
 const cardContents = [
   {
-    title: "work",
-    content: "Software Engineer / UX Engineer",
-    icon: "keyboard",
-  },
-  {
     title: "studies",
     content: "Masters in Media Computer Science",
     icon: "school",
   },
   {
-    title: "private stuff",
+    title: "work",
+    content: "Software Engineer / UX Engineer",
+    icon: "keyboard",
+  },
+  {
+    title: "interests",
     contentChips: ["Drawing", "Choir", "Languages"],
     icon: "stock_media",
   },

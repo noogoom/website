@@ -46,6 +46,10 @@ body {
   font-family: "Inter";
 }
 
+.site-card {
+  @apply border border-[var(--secondary)] bg-[white]/5 backdrop-blur-md shadow-sm p-6 flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-md hover:-translate-y-1;
+}
+
 .pretty-chips {
   color: var(--on-primary-background);
   background: transparent;

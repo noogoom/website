@@ -1,6 +1,45 @@
 import { title } from "@/components/primitives";
 
 export default function Work() {
+  const workItems = [
+    {
+      id: "thesis_gamification_2020",
+      title: "Master’s Thesis — Gamification in Software Systems",
+      year: 2020,
+      content:
+        "Researched gamification mechanics in digital systems, focusing on motivational design and behavioral reinforcement patterns in interactive environments.",
+      attachments: [
+        {
+          label: "Thesis",
+          url: "https://imld.de/study/theses/theses-2019/masterarbeit-sarah-alaghbari/",
+        },
+      ],
+      tags: ["research", "behavioral design", "UX", "gamification"],
+    },
+    {
+      id: "ai_transparency_publication_2024_2025",
+      title: "AI Transparency — UX & Interface Interpretation Concepts",
+      year: "2024–2025",
+      content:
+        "Exploration of how AI systems can be made more interpretable through interface design, focusing on transparency, controllability, and human understanding of algorithmic outputs.",
+      attachments: [
+        {
+          label: "LinkedIn Article",
+          url: "https://www.linkedin.com/feed/update/urn:li:activity:7379822456179691520/",
+        },
+      ],
+      tags: ["AI", "UX", "transparency", "human-AI interaction"],
+    },
+    {
+      id: "ux_full_cycle_product_work",
+      title: "Full-Cycle UX Work — Requirements to Implementation",
+      year: "2021–present",
+      content:
+        "Worked across the full feature lifecycle: gathering requirements, translating them into structured work packages, creating mockups, supporting frontend implementation, and iterating based on user feedback.",
+      attachments: [],
+      tags: ["product design", "UX", "agile", "stakeholder communication"],
+    },
+  ];
   return (
     <div>
       <h1 className={title()}>Work</h1>
