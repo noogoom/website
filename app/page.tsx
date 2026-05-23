@@ -1,5 +1,5 @@
 "use client";
-import { Card, CardContent, Chip, CardHeader, Separator } from "@heroui/react";
+import { Card, CardContent, Chip, CardHeader } from "@heroui/react";
 import { Image } from "@heroui/image";
 import { useTheme } from "next-themes";
 
@@ -42,7 +42,6 @@ export default function Home() {
           </Chip>
         ))}
       </div>
-      <Separator orientation="horizontal" />
       <div className="gap-3 grid grid-cols-3 lg:grid-cols-3 w-full">
         {cardContents.map((item, index) => (
           <Card key={index} className="site-card">
