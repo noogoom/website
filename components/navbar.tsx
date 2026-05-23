@@ -1,7 +1,7 @@
 "use client";
 
 import { siteConfig } from "@/config/site";
-// import { ThemeSwitch } from "./theme-switch";
+import { ThemeSwitch } from "./theme-switch";
 import { Separator } from "@heroui/react";
 
 export const Navbar = () => {
@@ -18,7 +18,7 @@ export const Navbar = () => {
               </li>
             ))}
           </ul>
-          {/* <ThemeSwitch /> */}
+          <ThemeSwitch />
         </div>
         <Separator orientation="horizontal" className="w-full" />
       </div>

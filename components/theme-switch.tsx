@@ -1,12 +1,19 @@
-function ThemeToggle() {
-  const { theme } = useUniwind();
+"use client";
+import { useTheme } from "next-themes";
+import { SunFilledIcon, MoonFilledIcon } from "@/components/icons";
+import { Button } from "@heroui/react";
+
+export function ThemeSwitch() {
+  const { theme, setTheme } = useTheme();
+  const isLightTheme = theme === "light";
 
   return (
-    <Button
-      onPress={() => Uniwind.setTheme(theme === "light" ? "dark" : "light")}>
-      <Button.Label>
-        Toggle {theme === "light" ? "Dark" : "Light"} Mode
-      </Button.Label>
+    <Button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+      {isLightTheme ? (
+        <MoonFilledIcon size={22} />
+      ) : (
+        <SunFilledIcon size={22} />
+      )}
     </Button>
   );
 }

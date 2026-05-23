@@ -1,7 +1,7 @@
 "use client";
 import { Card, CardContent, Chip, CardHeader, Separator } from "@heroui/react";
 import { Image } from "@heroui/image";
-// import { useTheme } from "next-themes";
+import { useTheme } from "next-themes";
 
 const chipContents = ["emojis ✨", "sustainability 🌱", "art", "figma", "يمن"];
 const cardContents = [
@@ -23,8 +23,7 @@ const cardContents = [
 ];
 
 export default function Home() {
-  // const { theme } = useTheme();
-  const theme = "light"; // Temporary hardcoded theme value for demonstration purposes
+  const { theme } = useTheme();
   return (
     <div className="flex flex-col gap-6 h-full">
       {theme === "light" ? (

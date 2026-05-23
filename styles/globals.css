@@ -2,42 +2,53 @@
 @import "@heroui/styles";
 
 :root {
-  /** Themes
-    * xx: x-300
+  /** Light theme
+    * xx: x-400
     * xx-background: xx-50
     * on-xx-background: xx-900
-    */
-
-  /** Light theme
+    * primary: fuchsia, secondary: amber
     * https://tailwindcss.com/docs/colors
-    * primary: amber, secondary: fuchsia
     */
   &.light,
   [data-theme="light"] {
-    --primary: oklch(87.9% 0.169 91.605);
-    --primary-background: oklch(98.7% 0.022 95.277);
-    --on-primary-background: oklch(41.4% 0.112 45.904);
-    --secondary: oklch(82.3% 0.12 346.018);
-    --secondary-background: oklch(90.5% 0.12 346.018);
-    --on-secondary-background: oklch(40.1% 0.17 325.612);
+    color-scheme: light;
+    --accent: oklch(71.8% 0.202 349.761);
+    --accent-background: oklch(90.5% 0.12 346.018);
+    --on-accent-background: oklch(40.1% 0.17 325.612);
+    --secondary: oklch(87.9% 0.169 91.605);
+    --secondary-background: oklch(98.7% 0.022 95.277);
+    --on-secondary-background: oklch(41.4% 0.112 45.904);
   }
 
-  /* Dark theme */
+  /** Dark theme
+    * xx: x-800
+    * xx-background: xx-950/900
+    * on-xx-background: xx-50 
+    * primary: violet, secondary: blue
+    */
   &.dark,
   [data-theme="dark"] {
-    --primary: hsl(var(--nextui-primary-400));
-    --primary-background: hsl(var(--nextui-primary-100));
-    --on-primary-background: hsl(var(--nextui-primary-900));
-    --secondary: hsl(var(--nextui-secondary-400));
-    --secondary-background: hsl(var(--nextui-secondary-100));
-    --on-secondary-background: hsl(var(--nextui-secondary-900));
+    color-scheme: dark;
+    --accent: oklch(38% 0.189 293.745);
+    --accent-background: oklch(38% 0.189 293.745);
+    --on-accent-background: oklch(96.9% 0.016 293.756);
+    --secondary: oklch(42.4% 0.199 265.638);
+    --secondary-background: oklch(18.2% 0.091 267.935);
+    --on-secondary-background: oklch(97% 0.014 254.604);
+    --separator: linear-gradient(
+      to right,
+      oklch(18.2% 0.091 267.935) 0%,
+      oklch(18.2% 0.091 267.935) 50%,
+      oklch(42.4% 0.199 265.638) 50%,
+      oklch(42.4% 0.199 265.638) 100%
+    );
   }
 
   --nextui-content1: transparent;
   --decorative-gradient: linear-gradient(
     to bottom right,
-    var(--primary-background),
-    var(--secondary)
+    var(--secondary-background),
+    var(--accent-background)
   );
 }
 
@@ -53,9 +64,9 @@ body {
 }
 
 .pretty-chips {
-  color: var(--on-primary-background);
+  color: var(--on-secondary-background);
   background: transparent;
-  border: 1px solid var(--secondary);
+  border: 1px solid var(--accent);
   &:hover {
     /* @apply shadow-pink-500/30; */
   }
