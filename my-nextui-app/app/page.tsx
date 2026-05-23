@@ -1,10 +1,7 @@
 "use client";
-import { Card, CardBody, CardHeader } from "@nextui-org/card";
-import { Chip } from "@nextui-org/chip";
-
-import { Divider } from "@nextui-org/divider";
-import { Image } from "@nextui-org/image";
-import { useTheme } from "next-themes";
+import { Card, CardContent, Chip, CardHeader, Separator } from "@heroui/react";
+import { Image } from "@heroui/image";
+// import { useTheme } from "next-themes";
 
 const chipContents = ["emojis ✨", "sustainability 🌱", "art", "figma", "يمن"];
 const cardContents = [
@@ -26,7 +23,8 @@ const cardContents = [
 ];
 
 export default function Home() {
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
+  const theme = "light"; // Temporary hardcoded theme value for demonstration purposes
   return (
     <div className="flex flex-col gap-6 h-full">
       {theme === "light" ? (
@@ -40,37 +38,31 @@ export default function Home() {
       </span>
       <div className="flex gap-4">
         {chipContents.map((chipContent) => (
-          <Chip variant="shadow" className="pretty-chips">
-            <b>#{chipContent}</b>
+          <Chip key={chipContent} className="pretty-chips">
+            <b>{chipContent}</b>
           </Chip>
         ))}
       </div>
-      <Divider orientation="horizontal" />
+      <Separator orientation="horizontal" />
       <div className="gap-3 grid grid-cols-3 lg:grid-cols-3 w-full">
         {cardContents.map((item, index) => (
-          <Card
-            shadow="sm"
-            key={index}
-            className="p-4 skillCard flex justify-center"
-            isPressable>
-            <CardHeader className="flex flex-col justify-center gap-4">
+          <Card key={index} className="site-card">
+            <CardHeader className="flex flex-col items-center justify-center gap-2 pb-2">
               <span className="material-symbols-outlined item-icon">
                 {item.icon}
               </span>
-              <h2 className="text-2xl tracking-widest text-indigo-400">
-                {item.title}
-              </h2>
+              <h2 className="text-xl font-bold tracking-tight">{item.title}</h2>
             </CardHeader>
-            <CardBody className="overflow-visible">
-              <div className="flex gap-4 justify-center">
+            <CardContent className="overflow-visible">
+              <div className="flex gap-4 justify-center text-sm font-medium">
                 {item.content}
-                {item.contentChips?.map((chip) => (
-                  <Chip variant="shadow" className="pretty-chips">
+                {item.contentChips?.map((chip, i) => (
+                  <Chip key={i} className="pretty-chips">
                     {chip}
                   </Chip>
                 ))}
               </div>
-            </CardBody>
+            </CardContent>
           </Card>
         ))}
       </div>

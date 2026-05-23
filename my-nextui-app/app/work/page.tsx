@@ -1,4 +1,13 @@
 import { title } from "@/components/primitives";
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  Tag,
+  TagGroup,
+  Button,
+  ButtonGroup,
+} from "@heroui/react";
 
 export default function Work() {
   const workItems = [
@@ -42,7 +51,36 @@ export default function Work() {
   ];
   return (
     <div>
-      <h1 className={title()}>Work</h1>
+      <h1 className={title()}>Featured Work</h1>
+      {workItems.map((item) => (
+        <Card key={item.id} className="site-card">
+          <CardHeader>
+            {item.title} ({item.year})
+          </CardHeader>
+          <CardContent>
+            <h3>{item.content}</h3>
+
+            <div>
+              The project focused on persuasive design, motivation systems, and
+              user-centered interaction patterns.
+            </div>
+
+            <TagGroup>
+              {item.tags.map((tag) => (
+                <Tag key={tag}>{tag}</Tag>
+              ))}
+            </TagGroup>
+
+            <ButtonGroup
+              variant="primary"
+              orientation="horizontal"
+              classNames="mt-4">
+              <Button>Read More</Button>
+              <Button>View Project</Button>
+            </ButtonGroup>
+          </CardContent>
+        </Card>
+      ))}
     </div>
   );
 }

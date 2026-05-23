@@ -1,8 +1,8 @@
 "use client";
 
 import { siteConfig } from "@/config/site";
-import { ThemeSwitch } from "./theme-switch";
-import { Divider } from "@nextui-org/divider";
+// import { ThemeSwitch } from "./theme-switch";
+import { Separator } from "@heroui/react";
 
 export const Navbar = () => {
   return (
@@ -18,9 +18,9 @@ export const Navbar = () => {
               </li>
             ))}
           </ul>
-          <ThemeSwitch />
+          {/* <ThemeSwitch /> */}
         </div>
-        <Divider orientation="horizontal" className="w-full" />
+        <Separator orientation="horizontal" className="w-full" />
       </div>
     </nav>
   );
