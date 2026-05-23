@@ -49,7 +49,7 @@ export default function RootLayout({
               backgroundImage: "var(--decorative-gradient)",
             }}>
             <Navbar />
-            <main className="container mt-16 mx-auto pt-16 px-6 flex-grow">
+            <main className="container mt-24 mx-auto pt-16 px-6 flex-grow">
               {children}
             </main>
             <div>

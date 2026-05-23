@@ -3,8 +3,6 @@ import {
   Card,
   CardHeader,
   CardContent,
-  Tag,
-  TagGroup,
   Button,
   ButtonGroup,
 } from "@heroui/react";
@@ -59,22 +57,14 @@ export default function Work() {
           </CardHeader>
           <CardContent>
             <h3>{item.content}</h3>
-
             <div>
               The project focused on persuasive design, motivation systems, and
               user-centered interaction patterns.
             </div>
-
-            <TagGroup>
-              {item.tags.map((tag) => (
-                <Tag key={tag}>{tag}</Tag>
-              ))}
-            </TagGroup>
-
             <ButtonGroup
               variant="primary"
               orientation="horizontal"
-              classNames="mt-4">
+              className="mt-4">
               <Button>Read More</Button>
               <Button>View Project</Button>
             </ButtonGroup>

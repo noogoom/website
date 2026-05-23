@@ -1,18 +1,20 @@
 "use client";
-import { Card, CardContent, Chip, CardHeader } from "@heroui/react";
+import { Avatar, Card, CardContent, Chip, CardHeader } from "@heroui/react";
 import { Image } from "@heroui/image";
 import { useTheme } from "next-themes";
 
-const chipContents = ["emojis ✨", "sustainability 🌱", "art", "figma", "يمن"];
+const chipContents = ["sustainability 🌱", "art", "figma", "emojis ✨", "يمن"];
 const cardContents = [
   {
     title: "studies",
-    content: "Masters in Media Computer Science",
+    content:
+      "M.Sc. in Media Computer Science, passionate about gamification, interactive technologies, and psychology.",
     icon: "school",
   },
   {
     title: "work",
-    content: "Software Engineer / UX Engineer",
+    content:
+      "Software & UX Engineer. Bridging structural frontend development with holistic human-centered product systems.",
     icon: "keyboard",
   },
   {
@@ -25,34 +27,37 @@ const cardContents = [
 export default function Home() {
   const { theme } = useTheme();
   return (
-    <div className="flex flex-col gap-6 h-full">
-      {theme === "light" ? (
-        <Image width={150} alt="Sun Picture" src="/sun.png" />
-      ) : (
-        <Image width={150} alt="Moon Picture" src="/image.png" />
-      )}
-      <span className="text-4xl font-bold">Hi, I'm Sarah</span>
-      <span className="text-2xl text-[hsl(var(--nextui-foreground-600))]">
-        I'm a software engineer with a passion for user experience and design.
-      </span>
-      <div className="flex gap-4">
-        {chipContents.map((chipContent) => (
-          <Chip key={chipContent} className="pretty-chips">
-            <b>{chipContent}</b>
-          </Chip>
-        ))}
-      </div>
+    <div className="flex flex-col gap-20 h-full">
+      <header className="flex flex-col gap-6">
+        {theme === "light" ? (
+          <Image width={150} alt="Sun Picture" src="/sun.png" />
+        ) : (
+          <Image width={150} alt="Moon Picture" src="/image.png" />
+        )}
+        <span className="text-6xl">Hi! 🐢</span>
+        <span className="text-2xl text-[hsl(var(--nextui-foreground-600))]">
+          I'm Sarah, a software engineer with a passion for user experience and
+          design.
+        </span>
+        <div className="flex gap-4">
+          {chipContents.map((chipContent) => (
+            <Chip key={chipContent} className="pretty-chips">
+              {chipContent}
+            </Chip>
+          ))}
+        </div>
+      </header>
       <div className="gap-3 grid grid-cols-3 lg:grid-cols-3 w-full">
         {cardContents.map((item, index) => (
           <Card key={index} className="site-card">
             <CardHeader className="flex flex-col items-center justify-center gap-2 pb-2">
-              <span className="material-symbols-outlined item-icon">
-                {item.icon}
-              </span>
-              <h2 className="text-xl font-bold tracking-tight">{item.title}</h2>
+              <Avatar className="item-icon">
+                <span className="material-symbols-outlined">{item.icon}</span>
+              </Avatar>
+              <h2 className="text-xl font-bold">{item.title}</h2>
             </CardHeader>
             <CardContent className="overflow-visible">
-              <div className="flex gap-4 justify-center text-sm font-medium">
+              <div className="flex gap-4 justify-center">
                 {item.content}
                 {item.contentChips?.map((chip, i) => (
                   <Chip key={i} className="pretty-chips">

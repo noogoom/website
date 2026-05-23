@@ -21,30 +21,22 @@
   }
 
   /** Dark theme
-    * xx: x-800
+    * xx: x-700
     * xx-background: xx-950/900
     * on-xx-background: xx-50 
-    * primary: violet, secondary: blue
+    * primary: violet, secondary: indigo
     */
   &.dark,
   [data-theme="dark"] {
     color-scheme: dark;
-    --accent: oklch(38% 0.189 293.745);
+    --accent: oklch(49.1% 0.27 292.581);
     --accent-background: oklch(38% 0.189 293.745);
     --on-accent-background: oklch(96.9% 0.016 293.756);
-    --secondary: oklch(42.4% 0.199 265.638);
-    --secondary-background: oklch(18.2% 0.091 267.935);
+    --secondary: oklch(45.7% 0.24 277.023);
+    --secondary-background: oklch(16.651% 0.0684 278.658);
     --on-secondary-background: oklch(97% 0.014 254.604);
-    --separator: linear-gradient(
-      to right,
-      oklch(18.2% 0.091 267.935) 0%,
-      oklch(18.2% 0.091 267.935) 50%,
-      oklch(42.4% 0.199 265.638) 50%,
-      oklch(42.4% 0.199 265.638) 100%
-    );
   }
 
-  --nextui-content1: transparent;
   --decorative-gradient: linear-gradient(
     to bottom right,
     var(--secondary-background),
@@ -58,18 +50,26 @@ body {
 
 .site-card {
   border-color: var(--secondary);
-  background: rgba(255, 255, 255, 0.05);
+  background-color: oklch(
+    from var(--secondary-background) l c h / calc(alpha - 0.6)
+  );
   backdrop-filter: blur(10px);
   padding: 1.5rem;
+  cursor: pointer;
+}
+
+.site-card:hover {
+  border: 1px solid var(--accent);
+  box-shadow: var(--tw-shadow-lg);
 }
 
 .pretty-chips {
+  padding: 5px 10px;
+  font-size: 1rem;
+  font-family: monospace;
   color: var(--on-secondary-background);
   background: transparent;
   border: 1px solid var(--accent);
-  &:hover {
-    /* @apply shadow-pink-500/30; */
-  }
 }
 
 .skill-card {
@@ -78,4 +78,5 @@ body {
 
 .item-icon {
   font-size: 3em !important;
+  background: var(--accent);
 }
