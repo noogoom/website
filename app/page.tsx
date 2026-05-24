@@ -54,7 +54,7 @@ export default function Home() {
               <Avatar className="item-icon">
                 <span className="material-symbols-outlined">{item.icon}</span>
               </Avatar>
-              <h2 className="text-xl font-bold">{item.title}</h2>
+              <h2 className="text-xl">{item.title}</h2>
             </CardHeader>
             <CardContent className="overflow-visible">
               <div className="flex gap-4 justify-center">

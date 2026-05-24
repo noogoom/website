@@ -19,7 +19,7 @@ export const Navbar = () => {
                   className={`font-medium font-mono transition-colors pb-2 border-b-2 ${
                     isActive(item.href)
                       ? "border-b-[var(--secondary)]"
-                      : "border-transparent hover:text-[var(--primary)]"
+                      : "border-transparent hover:text-[var(--on-secondary-background)]"
                   }`}>
                   {item.label}
                 </a>
