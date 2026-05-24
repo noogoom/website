@@ -41,13 +41,12 @@ export default function RootLayout({
         className={clsx(
           "min-h-screen font-sans antialiased",
           fontSans.variable,
-        )}>
+        )}
+        style={{
+          background: "var(--decorative-gradient) fixed",
+        }}>
         <Providers>
-          <div
-            className="relative flex flex-col h-screen"
-            style={{
-              backgroundImage: "var(--decorative-gradient)",
-            }}>
+          <div className="relative flex flex-col h-screen">
             <Navbar />
             <main className="container mt-24 mx-auto pt-16 px-6 flex-grow">
               {children}

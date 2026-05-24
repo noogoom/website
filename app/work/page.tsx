@@ -5,8 +5,9 @@ import {
   Card,
   CardHeader,
   CardContent,
-  Button,
-  ButtonGroup,
+  Chip,
+  Link,
+  Separator,
 } from "@heroui/react";
 
 export default function Work() {
@@ -52,53 +53,49 @@ export default function Work() {
   return (
     <div>
       <h1 className={title()}>Featured Work</h1>
-      {workItems.map((item) => (
-        <Card key={item.id} className="site-card mb-6">
-          <CardHeader>
-            {item.title} ({item.year})
-          </CardHeader>
-          <CardContent>
-            <h3>{item.content}</h3>
-            <div>
-              The project focused on persuasive design, motivation systems, and
-              user-centered interaction patterns.
-            </div>
-
-            {item.tags?.length ? (
-              <div className="flex flex-wrap gap-2 mt-3">
-                {item.tags.map((t) => (
-                  <span key={t} className="pretty-chips">
-                    {t}
-                  </span>
-                ))}
+      <div className="flex flex-col mt-12">
+        {workItems.map((item) => (
+          <Card key={item.id} className="site-card mb-6">
+            <CardHeader>
+              <Card.Title>
+                <h2>
+                  {item.year}: {item.title}
+                </h2>
+              </Card.Title>
+            </CardHeader>
+            <CardContent>
+              <h3>{item.content}</h3>
+              <div>
+                The project focused on persuasive design, motivation systems,
+                and user-centered interaction patterns.
               </div>
-            ) : null}
-
-            {item.attachments?.length ? (
-              <div className="mt-4 flex gap-2">
-                {item.attachments.map((att) => (
-                  <a
-                    key={att.url}
-                    href={att.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="pretty-chips">
-                    {att.label}
-                  </a>
-                ))}
-              </div>
-            ) : null}
-
-            <ButtonGroup
-              variant="primary"
-              orientation="horizontal"
-              className="mt-4">
-              <Button>Read More</Button>
-              <Button>View Project</Button>
-            </ButtonGroup>
-          </CardContent>
-        </Card>
-      ))}
+            </CardContent>
+            <Separator orientation="horizontal" className="w-full" />
+            <Card.Footer className="justify-between">
+              {item.tags?.length ? (
+                <div className="flex flex-wrap gap-2 mt-3">
+                  {item.tags.map((t) => (
+                    <Chip key={t} className="pretty-chips">
+                      {t}
+                    </Chip>
+                  ))}
+                </div>
+              ) : null}
+              {item.attachments?.length
+                ? item.attachments.map((attr) => (
+                    <Link
+                      href={attr.url}
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      View {attr.label}
+                      <Link.Icon />
+                    </Link>
+                  ))
+                : null}
+            </Card.Footer>
+          </Card>
+        ))}
+      </div>
     </div>
   );
 }

@@ -41,7 +41,7 @@ export default function Home() {
         </span>
         <div className="flex gap-4">
           {chipContents.map((chipContent) => (
-            <Chip key={chipContent} className="pretty-chips">
+            <Chip key={chipContent} className="pretty-chips text-sm">
               {chipContent}
             </Chip>
           ))}
@@ -49,18 +49,18 @@ export default function Home() {
       </header>
       <div className="gap-3 grid grid-cols-3 lg:grid-cols-3 w-full">
         {cardContents.map((item, index) => (
-          <Card key={index} className="site-card">
-            <CardHeader className="flex flex-col items-center justify-center gap-2 pb-2">
-              <Avatar className="item-icon">
+          <Card key={index} className="site-card site-card-hover">
+            <CardHeader className="flex flex-row items-center gap-2 pb-2">
+              <Avatar className="item-icon rounded-lg">
                 <span className="material-symbols-outlined">{item.icon}</span>
               </Avatar>
-              <h2 className="text-xl">{item.title}</h2>
+              <h2>{item.title}</h2>
             </CardHeader>
             <CardContent className="overflow-visible">
               <div className="flex gap-4 justify-center">
                 {item.content}
                 {item.contentChips?.map((chip, i) => (
-                  <Chip key={i} className="pretty-chips">
+                  <Chip key={i} className="pretty-chips text-sm">
                     {chip}
                   </Chip>
                 ))}

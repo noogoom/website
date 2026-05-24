@@ -28,24 +28,25 @@
     * xx: x-700
     * xx-background: xx-950/900
     * on-xx-background: xx-50 
-    * primary: violet, secondary: indigo
+    * primary: violet/slate, secondary: indigo
     */
   &.dark,
   [data-theme="dark"] {
     color-scheme: dark;
     --accent: oklch(49.1% 0.27 292.581);
-    --accent-background: oklch(38% 0.189 293.745);
+    --accent-background: oklch(20.8% 0.042 265.755);
     --on-accent-background: oklch(96.9% 0.016 293.756);
     --secondary: oklch(45.7% 0.24 277.023);
-    --secondary-background: oklch(16.651% 0.0684 278.658);
+    --secondary-background: oklch(25.7% 0.09 281.288);
     --on-secondary-background: oklch(97% 0.014 254.604);
   }
 
-  --decorative-gradient: linear-gradient(
+  --decorative-gradient: repeating-linear-gradient(
     to bottom right,
     var(--secondary-background),
     var(--accent-background)
   );
+  --hover-color: var(--secondary);
 }
 
 body {
@@ -65,18 +66,21 @@ body {
     transform 0.18s ease,
     box-shadow 0.18s ease,
     border-color 0.18s ease;
-  cursor: default;
+  cursor: pointer;
+
+  h2 {
+    font-size: 1.25rem;
+  }
 }
 
-.site-card:hover {
+.site-card-hover:hover {
   transform: translateY(-4px);
-  border-color: var(--accent);
+  border-color: var(--hover-color);
   box-shadow: 0 12px 30px rgba(2, 6, 23, 0.12);
 }
 
 .pretty-chips {
   padding: 5px 10px;
-  font-size: 1rem;
   font-family: monospace;
   color: var(--on-secondary-background);
   background: transparent;

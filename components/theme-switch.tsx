@@ -8,7 +8,12 @@ export function ThemeSwitch() {
   const isLightTheme = theme === "light";
 
   return (
-    <Button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+    <Button
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      className={
+        "bg-[var(--secondary-background)] text-[var(--on-secondary-background)] hover:border-[var(--hover-color)]"
+      }
+      variant="outline">
       {isLightTheme ? (
         <MoonFilledIcon size={22} />
       ) : (
