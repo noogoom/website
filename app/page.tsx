@@ -27,24 +27,26 @@ const cardContents = [
 export default function Home() {
   const { theme } = useTheme();
   return (
-    <div className="flex flex-col gap-20 h-full">
-      <header className="flex flex-col gap-6">
+    <div className="flex flex-col gap-16 h-full">
+      <header className="flex flex-row gap-6">
         {theme === "light" ? (
           <Image width={150} alt="Sun Picture" src="/sun.png" />
         ) : (
           <Image width={150} alt="Moon Picture" src="/image.png" />
         )}
-        <span className="text-6xl">Hi! 🐢</span>
-        <span className="text-2xl text-[hsl(var(--nextui-foreground-600))]">
-          I'm Sarah, a software engineer with a passion for user experience and
-          design.
-        </span>
-        <div className="flex gap-4">
-          {chipContents.map((chipContent) => (
-            <Chip key={chipContent} className="pretty-chips text-sm">
-              {chipContent}
-            </Chip>
-          ))}
+        <div className="flex flex-col gap-6">
+          <span className="text-4xl">Hi! 🐢</span>
+          <span className="text-2xl text-[hsl(var(--nextui-foreground-600))]">
+            I'm Sarah, a software engineer with a passion for user experience
+            and design.
+          </span>
+          <div className="flex gap-4">
+            {chipContents.map((chipContent) => (
+              <Chip key={chipContent} className="pretty-chips text-sm">
+                {chipContent}
+              </Chip>
+            ))}
+          </div>
         </div>
       </header>
       <div className="gap-3 grid grid-cols-3 lg:grid-cols-3 w-full">

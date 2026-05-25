@@ -13,14 +13,14 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <ul className="flex gap-10 items-center">
             {siteConfig.navItems.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  className={`font-medium font-mono transition-colors pb-2 border-b-2 ${
-                    isActive(item.href)
-                      ? "border-b-[var(--secondary)]"
-                      : "border-transparent hover:text-[var(--on-secondary-background)]"
-                  }`}>
+              <li
+                key={item.href}
+                className={`transition-colors border-b-2 ${
+                  isActive(item.href)
+                    ? "border-b-[var(--secondary)]"
+                    : "border-transparent hover:text-[var(--on-secondary-background)] hover:bg-[var(--accent-soft)]"
+                }`}>
+                <a href={item.href} className={`font-medium font-mono`}>
                   {item.label}
                 </a>
               </li>

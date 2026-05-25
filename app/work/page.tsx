@@ -57,11 +57,9 @@ export default function Work() {
         {workItems.map((item) => (
           <Card key={item.id} className="site-card mb-6">
             <CardHeader>
-              <Card.Title>
-                <h2>
-                  {item.year}: {item.title}
-                </h2>
-              </Card.Title>
+              <h2>
+                {item.year}: {item.title}
+              </h2>
             </CardHeader>
             <CardContent>
               <h3>{item.content}</h3>
@@ -82,8 +80,9 @@ export default function Work() {
                 </div>
               ) : null}
               {item.attachments?.length
-                ? item.attachments.map((attr) => (
+                ? item.attachments.map((attr, i) => (
                     <Link
+                      key={i}
                       href={attr.url}
                       target="_blank"
                       rel="noopener noreferrer">

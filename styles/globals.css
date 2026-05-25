@@ -10,7 +10,7 @@
     * xx: x-400
     * xx-background: xx-50
     * on-xx-background: xx-900
-    * primary: fuchsia, secondary: amber
+    * primary: fuchsia, secondary: orange
     * https://tailwindcss.com/docs/colors
     */
   &.light,
@@ -19,9 +19,9 @@
     --accent: oklch(71.8% 0.202 349.761);
     --accent-background: oklch(90.5% 0.12 346.018);
     --on-accent-background: oklch(40.1% 0.17 325.612);
-    --secondary: oklch(87.9% 0.169 91.605);
-    --secondary-background: oklch(98.7% 0.022 95.277);
-    --on-secondary-background: oklch(41.4% 0.112 45.904);
+    --secondary: oklch(75% 0.183 55.934);
+    --secondary-background: oklch(98% 0.016 73.684);
+    --on-secondary-background: oklch(40.8% 0.123 38.172);
   }
 
   /** Dark theme

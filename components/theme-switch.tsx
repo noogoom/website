@@ -11,7 +11,7 @@ export function ThemeSwitch() {
     <Button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       className={
-        "bg-[var(--secondary-background)] text-[var(--on-secondary-background)] hover:border-[var(--hover-color)]"
+        "bg-[var(--secondary-background)] border-transparent text-[var(--on-secondary-background)] hover:border-[var(--hover-color)]"
       }
       variant="outline">
       {isLightTheme ? (
