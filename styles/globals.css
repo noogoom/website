@@ -51,6 +51,13 @@
 
 body {
   font-family: "Inter";
+
+  h1,
+  h2,
+  h3 {
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+  }
 }
 
 .site-card {
@@ -81,7 +88,7 @@ body {
 
 .pretty-chips {
   padding: 5px 10px;
-  font-family: monospace;
+  font-family: Fira_Code, monospace;
   color: var(--on-secondary-background);
   background: transparent;
   border: 1px solid var(--accent);

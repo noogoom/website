@@ -6,21 +6,24 @@ import { useTheme } from "next-themes";
 const chipContents = ["sustainability 🌱", "art", "figma", "emojis ✨", "يمن"];
 const cardContents = [
   {
-    title: "studies",
+    title: "about me",
     content:
       "M.Sc. in Media Computer Science, passionate about gamification, interactive technologies, and psychology.",
     icon: "school",
+    page: "about",
   },
   {
     title: "work",
     content:
       "Software & UX Engineer. Bridging structural frontend development with holistic human-centered product systems.",
     icon: "keyboard",
+    page: "work",
   },
   {
     title: "interests",
     contentChips: ["Drawing", "Choir", "Languages"],
     icon: "stock_media",
+    page: "interests",
   },
 ];
 
@@ -51,7 +54,10 @@ export default function Home() {
       </header>
       <div className="gap-3 grid grid-cols-3 lg:grid-cols-3 w-full">
         {cardContents.map((item, index) => (
-          <Card key={index} className="site-card site-card-hover">
+          <Card
+            key={index}
+            className="site-card site-card-hover"
+            onClick={() => (window.location.href = `/${item.page}`)}>
             <CardHeader className="flex flex-row items-center gap-2 pb-2">
               <Avatar className="item-icon rounded-lg">
                 <span className="material-symbols-outlined">{item.icon}</span>

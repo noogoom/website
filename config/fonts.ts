@@ -1,4 +1,8 @@
-import { Fira_Code as FontMono, Inter as FontSans, Gupter as FontSerif } from "next/font/google";
+import {
+  Fira_Code as FontMono,
+  Inter as FontSans,
+  Merriweather as FontSerif,
+} from "next/font/google";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -13,5 +17,5 @@ export const fontMono = FontMono({
 export const fontSerif = FontSerif({
   subsets: ["latin"],
   variable: "--font-serif",
-  weight: "400"
+  weight: "300",
 });

@@ -52,7 +52,13 @@ export default function Work() {
   ];
   return (
     <div>
-      <h1 className={title()}>Featured Work</h1>
+      <h1 className={title()}>
+        Translating complexity into comprehensive experiences
+      </h1>
+      <div className="text-lg text-[hsl(var(--nextui-foreground-600))] mt-4">
+        I enjoy working at the intersection between technology, design,
+        communication, and psychology.
+      </div>
       <div className="flex flex-col mt-12">
         {workItems.map((item) => (
           <Card key={item.id} className="site-card mb-6">
@@ -62,11 +68,7 @@ export default function Work() {
               </h2>
             </CardHeader>
             <CardContent>
-              <h3>{item.content}</h3>
-              <div>
-                The project focused on persuasive design, motivation systems,
-                and user-centered interaction patterns.
-              </div>
+              <div>{item.content}</div>
             </CardContent>
             <Separator orientation="horizontal" className="w-full" />
             <Card.Footer className="justify-between">
