@@ -27,6 +27,20 @@ export default function Work() {
       tags: ["AI", "UX", "transparency", "human-AI interaction"],
     },
     {
+      id: "choir_vis",
+      title: "Social Media Content production for Choir",
+      year: "2022–today",
+      content:
+        "Visual communication work for my acapella choir. Includes designing Instagram layouts, video production, sound editing, poster templates.",
+      attachments: [
+        {
+          label: "Instagram 'Vokalwerk Dresden'",
+          url: "https://www.instagram.com/vokalwerkdresden",
+        },
+      ],
+      tags: ["visual design", "social media", "content production"],
+    },
+    {
       id: "case_study_tm",
       title: "Case Study: Survey of User Requirements for Frontend Feature",
       year: "2023–2024",
@@ -34,7 +48,7 @@ export default function Work() {
         "Conducted a survey and analysis of user requirements for a task management feature, focusing on user needs, pain points, and desired functionalities to inform the design and development process.",
       attachments: [
         {
-          label: "Case Study",
+          label: "Case Study (PDF)",
           url: "./tm-case-study.pdf",
         },
       ],
@@ -53,7 +67,7 @@ export default function Work() {
         "Researched gamification mechanics in digital systems, focusing on motivational design and behavioral reinforcement patterns in interactive environments.",
       attachments: [
         {
-          label: "Thesis",
+          label: "Master's Thesis",
           url: "https://imld.de/study/theses/theses-2019/masterarbeit-sarah-alaghbari/",
         },
       ],
@@ -66,7 +80,7 @@ export default function Work() {
         <img
           src="/drawing.jpg"
           alt="colorful pink blob"
-          className="h-14 w-18 overflow-hidden rounded-full ring-2 ring-white object-cover object-left"
+          className="h-14 w-18 overflow-hidden rounded-full  ring-white object-cover object-left"
         />
         <h1 className={title()}>Complex workflows? Happy experiences 🪄</h1>
       </div>
@@ -103,7 +117,7 @@ export default function Work() {
                       href={attr.url}
                       target="_blank"
                       rel="noopener noreferrer">
-                      View {attr.label}
+                      {attr.label}
                       <Link.Icon />
                     </Link>
                   ))

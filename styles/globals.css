@@ -73,25 +73,29 @@ body {
     transform 0.18s ease,
     box-shadow 0.18s ease,
     border-color 0.18s ease;
-  cursor: pointer;
 
   h2 {
     font-size: 1.25rem;
   }
 }
 
-.site-card-hover:hover {
+.site-card.interactive {
+  cursor: pointer;
+}
+
+.site-card.interactive:hover {
   transform: translateY(-4px);
-  border-color: var(--hover-color);
-  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.12);
+  box-shadow: 0px 14px 70px 0px
+    color-mix(in srgb, var(--hover-color) 25%, transparent);
 }
 
 .pretty-chips {
   padding: 5px 10px;
   font-family: Fira_Code, monospace;
   color: var(--on-secondary-background);
-  background: transparent;
-  border: 1px solid var(--accent);
+  background: var(--secondary-background);
+  box-shadow: 2px 3px 1px
+    color-mix(in srgb, var(--hover-color) 25%, transparent);
 }
 
 .skill-card {

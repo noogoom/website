@@ -50,7 +50,7 @@ export default function Home() {
           <h1 className="text-4xl">Hi! 🐢</h1>
           <h2 className="text-2xl text-[hsl(var(--nextui-foreground-600))]">
             I&apos;m Sarah, a software engineer with a passion for user
-            experience and design.
+            experience, design, numbers and much more 🀍
           </h2>
           <div className="flex gap-4">
             {chipContents.map((chipContent) => (
@@ -65,7 +65,7 @@ export default function Home() {
         {cardContents.map((item, index) => (
           <Card
             key={index}
-            className="site-card site-card-hover"
+            className="site-card interactive"
             onClick={() => (window.location.href = `/${item.page}`)}>
             <CardHeader className="flex flex-row items-center gap-2 pb-2">
               <Avatar className="item-icon rounded-lg">

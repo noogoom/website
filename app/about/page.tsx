@@ -6,7 +6,7 @@ export default function AboutPage() {
       <img
         src="/goosie_1.png"
         alt="goose picture"
-        className="h-14 w-18 overflow-hidden rounded-full ring-2 ring-white object-cover object-left"
+        className="h-14 w-18 overflow-hidden rounded-full  ring-white object-cover object-left"
       />
       <h1 className={title()}>About</h1>
     </div>
