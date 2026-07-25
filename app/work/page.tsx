@@ -14,7 +14,7 @@ export default function Work() {
   const workItems = [
     {
       id: "ai_transparency_publication_2024_2025",
-      title: "AI Transparency — UX & Interface Interpretation Concepts",
+      title: "AI Transparency: UX & Interface Interpretation Concepts",
       year: "2024–2025",
       content:
         "Exploration of how AI systems can be made more interpretable through interface design, focusing on transparency, controllability, and human understanding of algorithmic outputs.",
@@ -27,17 +27,27 @@ export default function Work() {
       tags: ["AI", "UX", "transparency", "human-AI interaction"],
     },
     {
-      id: "ux_full_cycle_product_work",
-      title: "Full-Cycle UX Work — Requirements to Implementation",
-      year: "2021–present",
+      id: "case_study_tm",
+      title: "Case Study: Survey of User Requirements for Frontend Feature",
+      year: "2023–2024",
       content:
-        "Worked across the full feature lifecycle: gathering requirements, translating them into structured work packages, creating mockups, supporting frontend implementation, and iterating based on user feedback.",
-      attachments: [],
-      tags: ["product design", "UX", "agile", "stakeholder communication"],
+        "Conducted a survey and analysis of user requirements for a task management feature, focusing on user needs, pain points, and desired functionalities to inform the design and development process.",
+      attachments: [
+        {
+          label: "Case Study",
+          url: "./tm-case-study.pdf",
+        },
+      ],
+      tags: [
+        "UX",
+        "requirements analysis",
+        "case study",
+        "frontend development",
+      ],
     },
     {
       id: "thesis_gamification_2020",
-      title: "Master’s Thesis — Gamification in Software Systems",
+      title: "Master’s Thesis: Gamification in Software Systems",
       year: 2020,
       content:
         "Researched gamification mechanics in digital systems, focusing on motivational design and behavioral reinforcement patterns in interactive environments.",
