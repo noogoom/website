@@ -2,13 +2,14 @@
 import { Avatar, Card, CardContent, Chip, CardHeader } from "@heroui/react";
 import { Image } from "@heroui/image";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 const chipContents = ["sustainability 🌱", "art", "figma", "emojis ✨", "يمن"];
 const cardContents = [
   {
     title: "about me",
     content:
-      "M.Sc. in Media Computer Science, passionate about gamification, interactive technologies, and psychology.",
+      "M.Sc. in Media Computer Science, passionate about gamification, mathematics, and psychology.",
     icon: "school",
     page: "about",
   },
@@ -29,20 +30,28 @@ const cardContents = [
 
 export default function Home() {
   const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isLightTheme = mounted ? theme === "light" : true;
+
   return (
     <div className="flex flex-col gap-16 h-full">
       <header className="flex flex-row gap-6">
-        {theme === "light" ? (
+        {isLightTheme ? (
           <Image width={150} alt="Sun Picture" src="/sun.png" />
         ) : (
           <Image width={150} alt="Moon Picture" src="/image.png" />
         )}
         <div className="flex flex-col gap-6">
-          <span className="text-4xl">Hi! 🐢</span>
-          <span className="text-2xl text-[hsl(var(--nextui-foreground-600))]">
-            I'm Sarah, a software engineer with a passion for user experience
-            and design.
-          </span>
+          <h1 className="text-4xl">Hi! 🐢</h1>
+          <h2 className="text-2xl text-[hsl(var(--nextui-foreground-600))]">
+            I&apos;m Sarah, a software engineer with a passion for user
+            experience and design.
+          </h2>
           <div className="flex gap-4">
             {chipContents.map((chipContent) => (
               <Chip key={chipContent} className="pretty-chips text-sm">
@@ -52,7 +61,7 @@ export default function Home() {
           </div>
         </div>
       </header>
-      <div className="gap-3 grid grid-cols-3 lg:grid-cols-3 w-full">
+      <div className="gap-3 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full">
         {cardContents.map((item, index) => (
           <Card
             key={index}

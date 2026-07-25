@@ -2,10 +2,17 @@
 import { useTheme } from "next-themes";
 import { SunFilledIcon, MoonFilledIcon } from "@/components/icons";
 import { Button } from "@heroui/react";
+import { useEffect, useState } from "react";
 
 export function ThemeSwitch() {
   const { theme, setTheme } = useTheme();
-  const isLightTheme = theme === "light";
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isLightTheme = mounted ? theme === "light" : true;
 
   return (
     <Button

@@ -34,10 +34,10 @@
   [data-theme="dark"] {
     color-scheme: dark;
     --accent: oklch(49.1% 0.27 292.581);
-    --accent-background: oklch(20.8% 0.042 265.755);
+    --accent-background: oklch(34.148% 0.14232 284.75);
     --on-accent-background: oklch(96.9% 0.016 293.756);
-    --secondary: oklch(45.7% 0.24 277.023);
-    --secondary-background: oklch(25.7% 0.09 281.288);
+    --secondary: oklch(44.833% 0.2405 286.659);
+    --secondary-background: oklch(18.994% 0.08025 279.708);
     --on-secondary-background: oklch(97% 0.014 254.604);
   }
 

@@ -13,20 +13,6 @@ import {
 export default function Work() {
   const workItems = [
     {
-      id: "thesis_gamification_2020",
-      title: "Master’s Thesis — Gamification in Software Systems",
-      year: 2020,
-      content:
-        "Researched gamification mechanics in digital systems, focusing on motivational design and behavioral reinforcement patterns in interactive environments.",
-      attachments: [
-        {
-          label: "Thesis",
-          url: "https://imld.de/study/theses/theses-2019/masterarbeit-sarah-alaghbari/",
-        },
-      ],
-      tags: ["research", "behavioral design", "UX", "gamification"],
-    },
-    {
       id: "ai_transparency_publication_2024_2025",
       title: "AI Transparency — UX & Interface Interpretation Concepts",
       year: "2024–2025",
@@ -49,12 +35,24 @@ export default function Work() {
       attachments: [],
       tags: ["product design", "UX", "agile", "stakeholder communication"],
     },
+    {
+      id: "thesis_gamification_2020",
+      title: "Master’s Thesis — Gamification in Software Systems",
+      year: 2020,
+      content:
+        "Researched gamification mechanics in digital systems, focusing on motivational design and behavioral reinforcement patterns in interactive environments.",
+      attachments: [
+        {
+          label: "Thesis",
+          url: "https://imld.de/study/theses/theses-2019/masterarbeit-sarah-alaghbari/",
+        },
+      ],
+      tags: ["research", "behavioral design", "UX", "gamification"],
+    },
   ];
   return (
     <div>
-      <h1 className={title()}>
-        Translating complexity into comprehensive experiences
-      </h1>
+      <h1 className={title()}>Complex workflows? 🪄 Happy experiences 🎉</h1>
       <div className="text-lg text-[hsl(var(--nextui-foreground-600))] mt-4">
         I enjoy working at the intersection between technology, design,
         communication, and psychology.
