@@ -40,7 +40,14 @@ export default function Interests() {
   ];
   return (
     <div>
-      <h1 className={title()}>What fuels my creativity?</h1>
+      <div className="flex flex-row gap-6 items-center">
+        <img
+          src="/goosie_2.png"
+          alt="goose picture"
+          className="h-14 w-18 overflow-hidden rounded-full ring-2 ring-white object-cover object-left"
+        />
+        <h1 className={title()}>What fuels my creativity?</h1>
+      </div>
       <div className="flex flex-col mt-12">
         {interests.map((item, index) => (
           <Card

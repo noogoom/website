@@ -62,7 +62,14 @@ export default function Work() {
   ];
   return (
     <div>
-      <h1 className={title()}>Complex workflows? 🪄 Happy experiences 🎉</h1>
+      <div className="flex flex-row gap-6 items-center">
+        <img
+          src="/drawing.jpg"
+          alt="colorful pink blob"
+          className="h-14 w-18 overflow-hidden rounded-full ring-2 ring-white object-cover object-left"
+        />
+        <h1 className={title()}>Complex workflows? Happy experiences 🪄</h1>
+      </div>
       <div className="text-lg text-[hsl(var(--nextui-foreground-600))] mt-4">
         I enjoy working at the intersection between technology, design,
         communication, and psychology.
