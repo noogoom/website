@@ -78,9 +78,9 @@ export default function Work() {
     <div>
       <div className="flex flex-row gap-6 items-center">
         <img
-          src="/drawing.jpg"
+          src="/work.png"
           alt="colorful pink blob"
-          className="h-14 w-18 overflow-hidden rounded-full  ring-white object-cover object-left"
+          className="h-full w-18 overflow-hidden object-cover object-left"
         />
         <h1 className={title()}>Complex workflows? Happy experiences 🪄</h1>
       </div>

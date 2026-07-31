@@ -28,6 +28,13 @@ const cardContents = [
   },
 ];
 
+/**
+ * to dos:
+ * - add about me page content
+ * - maybe add images of poster
+ * - maybe add seventh prototype
+ * - check bug where when switching to dark mode, the sun picture is still visible for a second
+ */
 export default function Home() {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);

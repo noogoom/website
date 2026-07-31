@@ -4,9 +4,9 @@ export default function AboutPage() {
   return (
     <div className="flex flex-row gap-6 items-center">
       <img
-        src="/goosie_1.png"
-        alt="goose picture"
-        className="h-14 w-18 overflow-hidden rounded-full  ring-white object-cover object-left"
+        src="/mepic.png"
+        alt="profile picture"
+        className="h-full w-16 object-cover object-left"
       />
       <h1 className={title()}>About</h1>
     </div>
