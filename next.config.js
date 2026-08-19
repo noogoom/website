@@ -1,13 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
 
-module.exports = {
-  webpack: (config, { isServer }) => {
-    config.resolve = config.resolve || {};
-    config.resolve.alias = {
-      ...(config.resolve.alias || {}),
-      "react-native$": "react-native-web",
-    };
-    return config;
+const nextConfig = {
+  output: "export",
+  images: {
+    unoptimized: true,
   },
 };
+
+module.exports = nextConfig;
