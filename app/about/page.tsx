@@ -5,7 +5,7 @@ export default function AboutPage() {
     <div className="flex flex-row gap-6 items-center">
       <img
         src="/mepic.png"
-        alt="profile picture"
+        alt="avatar"
         className="h-full w-16 object-cover object-left"
       />
       <h1 className={title()}>About</h1>

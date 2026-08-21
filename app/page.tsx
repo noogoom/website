@@ -11,7 +11,7 @@ const cardContents = [
     content:
       "M.Sc. in Media Computer Science, passionate about gamification, mathematics, and psychology.",
     icon: "school",
-    page: "about",
+    page: "interests",
   },
   {
     title: "work",
@@ -49,9 +49,9 @@ export default function Home() {
     <div className="flex flex-col gap-16 h-full">
       <header className="flex flex-row gap-6">
         {isLightTheme ? (
-          <Image width={150} alt="Sun Picture" src="/sun.png" />
+          <Image width={150} alt="Sun" src="/sun.png" />
         ) : (
-          <Image width={150} alt="Moon Picture" src="/image.png" />
+          <Image width={150} alt="Moon" src="/image.png" />
         )}
         <div className="flex flex-col gap-6">
           <h1 className="text-4xl">Hi! 🐢</h1>

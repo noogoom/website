@@ -43,7 +43,7 @@ export default function Interests() {
       <div className="flex flex-row gap-6 items-center">
         <img
           src="/interest.png"
-          alt="goose picture"
+          alt="goose"
           className="h-full w-20 overflow-hidden object-cover object-left"
         />
         <h1 className={title()}>What fuels my creativity?</h1>
