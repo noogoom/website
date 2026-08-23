@@ -6,14 +6,14 @@ import { Card, CardHeader, CardContent } from "@heroui/react";
 export default function Interests() {
   const interests = [
     {
-      title: "Languages and Linguistics",
+      title: "Languages",
       emoji: "💬",
       gradient: `from-[var(--blue-1)] to-[var(--purple-2)]/70`,
       border: `border-[var(--blue-2)]/80`,
       text: `text-[var(--blue-font)]`,
       tags: ["🇩🇪 GE", "🇾🇪 AR", "🇬🇧 EN", "🇪🇸 ES", "🇫🇷 FR", "🇮🇹 ITA"],
       content:
-        "I was lucky enough to grow up bilingual and to learn <b>German</b> & <b>Arabic</b> as my mother tongues. In school, I learned <b>English</b>, <b>French</b>, and <b>Italian</b>, the latter of which I then based learning <b>Spanish</b> on, resulting in a peculiar itañol mixture.",
+        "I was lucky enough to grow up bilingual, learning <b>German</b> & <b>Arabic</b> as my mother tongues. In school, I learned <b>English</b>, <b>French</b>, and <b>Italian</b>, the latter of which I then based learning <b>Spanish</b> on, resulting in a peculiar itañol mixture that I still blab every now and then 🐥",
     },
     {
       title: "The Number 7",
@@ -25,14 +25,14 @@ export default function Interests() {
         "I once created a presentation about sevenths cause ... they're cyclic! I am very fond of mental math which is why I was absolutely bedazzled when I noticed that fractions of 7 were actually magical. All you need to know is the string 142857. Any fraction of 7 will then be a cyclic permutation of this string 🌈",
     },
     {
-      title: "Drawing and Visual Arts",
+      title: "Drawing",
       image: "/sailormoon.png",
       emoji: "🎨",
       gradient: `from-[var(--pink-1)] to-[var(--red-2)]/70`,
       border: `border-[var(--pink-2)]/80`,
       text: `text-[var(--pink-font)]`,
       content:
-        "Growing up, I was obsessed with Sailor Moon which led to me always drawing faces with way too big eyes (till date). I love drawing <b>portraits</b>, but in the recent years have gotten more into <b>landscapes</b> and sun/moon aesthetics ☾",
+        "Growing up, I was obsessed with Sailor Moon which led to me always drawing faces with way too big eyes (till date). I love drawing <b>portraits</b>, but have recently gotten more into <b>landscapes</b> and sun/moon aesthetics 🌗",
     },
     {
       title: "Music & Choir",
@@ -54,22 +54,33 @@ export default function Interests() {
     },
   ];
 
+  const images = [
+    {
+      src: "geesi.jpg",
+      alt: "geese",
+      rotation: "-15deg",
+    },
+    {
+      src: "cake.jpg",
+      alt: "cake sketch",
+      rotation: "5deg",
+    },
+    {
+      src: "moonmoon.jpg",
+      alt: "waterpainting of a fullmoon",
+      rotation: "-10deg",
+    },
+  ];
+
   return (
     <div>
-      <div className="flex flex-row gap-6 items-center">
-        <h1 className={title()}>
-          <span className="font-mono text-3xl font-light">
-            Things that fuel my creativity
-          </span>
-        </h1>
-        <img
-          src="/interest.png"
-          alt="goose"
-          className="h-full w-20 overflow-hidden object-cover object-left"
-        />
-      </div>
+      <h1 className={title()}>
+        <span className="font-mono text-3xl font-light">
+          Things that fuel my creativity ♡
+        </span>
+      </h1>
 
-      <div className="mt-12 space-y-6 background-white">
+      <div className="mt-12 space-y-6">
         <div className="grid gap-12 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1">
           {interests.map((item, index) => (
             <div key={index} className="grid justify-items-end">
@@ -110,6 +121,16 @@ export default function Interests() {
               )}
             </div>
           ))}
+          <div className="flex gap-4">
+            {images.map((image, index) => (
+              <img
+                key={index}
+                src={"/drawings/" + image.src}
+                alt={image.alt}
+                className="z-10 h-26 border-4 border-[var(--neutral-color)]/25 shadow-xl/20 flex-none rounded-md object-cover rotate-[image.rotation] hover:rotate-[5deg] hover:scale-[1.1]"
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
