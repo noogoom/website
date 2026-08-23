@@ -17,11 +17,38 @@
   [data-theme="light"] {
     color-scheme: light;
     --accent: oklch(71.8% 0.202 349.761);
-    --accent-background: oklch(90.5% 0.12 346.018);
+    --accent-background: oklch(87.731% 0.09624 334.905 / 0.512);
     --on-accent-background: oklch(40.1% 0.17 325.612);
     --secondary: oklch(75% 0.183 55.934);
     --secondary-background: oklch(98% 0.016 73.684);
     --on-secondary-background: oklch(40.8% 0.123 38.172);
+    --neutral-color: white;
+    --neutral-border: #99d3ff;
+    --neutral-text: var(--color-slate-700);
+    --emerald-1: var(--color-emerald-100);
+    --emerald-2: var(--color-emerald-200);
+    --emerald-font: var(--color-emerald-900);
+    --cyan-1: var(--color-cyan-100);
+    --cyan-2: var(--color-cyan-200);
+    --cyan-font: var(--color-cyan-900);
+    --blue-1: var(--color-blue-100);
+    --blue-2: var(--color-blue-200);
+    --blue-font: var(--color-blue-900);
+    --violet-1: var(--color-violet-100);
+    --violet-2: var(--color-violet-200);
+    --violet-font: var(--color-violet-900);
+    --purple-1: var(--color-purple-100);
+    --purple-2: var(--color-purple-200);
+    --purple-font: var(--color-purple-900);
+    --fuchsia-2: var(--color-fuchsia-200);
+    --pink-1: var(--color-pink-100);
+    --pink-2: var(--color-pink-200);
+    --pink-font: var(--color-pink-900);
+    --red-2: var(--color-red-200);
+    --orange-1: var(--color-orange-100);
+    --orange-2: var(--color-orange-200);
+    --orange-font: var(--color-orange-900);
+    --yellow-2: var(--color-yellow-200);
   }
 
   /** Dark theme
@@ -39,6 +66,35 @@
     --secondary: oklch(44.833% 0.2405 286.659);
     --secondary-background: oklch(18.994% 0.08025 279.708);
     --on-secondary-background: oklch(97% 0.014 254.604);
+    --neutral-color: rgba(0, 0, 0, 0.6);
+    --neutral-border: rgba(255, 255, 255, 0.1);
+    --neutral-text: var(--color-slate-300);
+
+    --emerald-1: var(--color-emerald-900);
+    --emerald-2: var(--color-emerald-800);
+    --emerald-font: var(--color-emerald-100);
+    --cyan-1: var(--color-cyan-900);
+    --cyan-2: var(--color-cyan-800);
+    --cyan-font: var(--color-cyan-100);
+    --blue-1: var(--color-blue-900);
+    --blue-2: var(--color-blue-800);
+    --blue-font: var(--color-blue-100);
+    --violet-1: var(--color-violet-900);
+    --violet-2: var(--color-violet-800);
+    --violet-font: var(--color-violet-100);
+    --purple-1: var(--color-purple-900);
+    --purple-2: var(--color-purple-800);
+    --purple-font: var(--color-purple-100);
+    --fuchsia-2: var(--color-fuchsia-800);
+    --pink-1: var(--color-pink-900);
+    --pink-2: var(--color-pink-800);
+    --pink-font: var(--color-pink-100);
+    --red-2: var(--color-red-800);
+    --orange-1: var(--color-orange-900);
+    --orange-2: var(--color-orange-800);
+    --orange-font: var(--color-orange-100);
+    --yellow-1: var(--color-yellow-900);
+    --yellow-2: var(--color-yellow-800);
   }
 
   --decorative-gradient: repeating-linear-gradient(
@@ -51,6 +107,7 @@
 
 body {
   font-family: "Inter";
+  font-weight: 300;
 
   h1,
   h2,

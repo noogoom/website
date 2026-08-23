@@ -12,6 +12,7 @@ export const fontSans = FontSans({
 export const fontMono = FontMono({
   subsets: ["latin"],
   variable: "--font-mono",
+  weight: "variable",
 });
 
 export const fontSerif = FontSerif({

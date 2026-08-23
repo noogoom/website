@@ -6,72 +6,111 @@ import { Card, CardHeader, CardContent } from "@heroui/react";
 export default function Interests() {
   const interests = [
     {
-      title: "Drawing and Visual Arts",
-      image: "/sailormoon.png",
-      emoji: "🎨",
-      content:
-        "Growing up, I was obsessed with Sailor Moon which led to me always drawing faces with way too big eyes (till date). I love drawing <b>portraits</b>, but in the recent years have gotten more into <b>landscapes</b> and doodling sun/moon aesthetics (who would have thought?)",
-    },
-    {
-      title: "Music & Choir",
-      emoji: "🎶",
-      content:
-        "A Mezzo, cosplaying as an Alto. There is so much music to love: Cartoon theme songs, 80s Britpop, Arabic 90s, Grunge, 70s Funk, New German Wave, the Mario Kart Soundtrack, and many many more. I have learned that singing with others is an absolutely magical experience that helps me charge my batteries. Besides, I am a part-time mimic of emergency car sirens in order to find my fourths.",
-    },
-    {
-      title: "Languages and Linguistics (and being a Grammar Nerd)",
+      title: "Languages and Linguistics",
       emoji: "💬",
+      gradient: `from-[var(--blue-1)] to-[var(--purple-2)]/70`,
+      border: `border-[var(--blue-2)]/80`,
+      text: `text-[var(--blue-font)]`,
+      tags: ["🇩🇪 GE", "🇾🇪 AR", "🇬🇧 EN", "🇪🇸 ES", "🇫🇷 FR", "🇮🇹 ITA"],
       content:
-        "Growing up bilingual, I was lucky enough to learn two phonetically quite distinct languages <b>German</b> & <b>Arabic</b> as my mother tongues. I believe, this unlocked some areas in my brain that help me quickly grasp new languages. In school, I learned <b>English</b>, <b>French</b>, and <b>Italian</b>, the latter of which I then based learning <b>Spanish</b> on, resulting in a peculiar mixture of Italian and Spanish that I carry in my head and call my own Esperanto. Also, I am highly fascinated by the evolution of languages and love looking at <u><a href='https://www.worldhistory.org/image/1028/indo-european-language-family-tree/' target='_blank' rel='noopener noreferrer'>trees that visualize the connections among languages</a></u> 🤌. Did you know that in theory, Persian and German are actually part of the same language family, and therefore more closely related than, e.g., Persian and Arabic? And evolution is still happening, for example with the rise of internet slang and emojis – love it! 👾",
-    },
-
-    {
-      title: "Emojis",
-      emoji: "🫏",
-      content:
-        "Since I know that <u><a href='https://emojipedia.org/' target='_blank' rel='noopener noreferrer'>emojipedia</a></u> exists, my life has not been the same. Despite a refused request for a donkey emoji in 2017 (which DOES exists now, take that <i>'not distinctive enough from existing horse emoji'</i>!), I still have a list of emojis I am planning to request at one point 🤓 Also, if you have never used <u><a href='https://emojipedia.org/emoji-mashup' target='_blank' rel='noopener noreferrer'>emoji kitchen</a></u>, take a look, now!",
+        "I was lucky enough to grow up bilingual and to learn <b>German</b> & <b>Arabic</b> as my mother tongues. In school, I learned <b>English</b>, <b>French</b>, and <b>Italian</b>, the latter of which I then based learning <b>Spanish</b> on, resulting in a peculiar itañol mixture.",
     },
     {
       title: "The Number 7",
       emoji: "7️⃣",
+      gradient: `from-[var(--emerald-1)] to-[var(--cyan-2)]/70`,
+      border: `border-[var(--emerald-2)]/80`,
+      text: `text-[var(--emerald-font)]`,
       content:
-        "Believe it or not, I once created a presentation about sevenths cause ... they're cyclic! I am very fond of mental maths which is why I was absolutely bedazzled when I noticed that fractions of 7 were actually magical. All you need to know is the string 142857 (which, funny enough, is 2*7, 4*7 and 8*7+1). Any fraction of 7 will be a cyclic permutation of this string and this makes me really happy 🌈",
+        "I once created a presentation about sevenths cause ... they're cyclic! I am very fond of mental math which is why I was absolutely bedazzled when I noticed that fractions of 7 were actually magical. All you need to know is the string 142857. Any fraction of 7 will then be a cyclic permutation of this string 🌈",
+    },
+    {
+      title: "Drawing and Visual Arts",
+      image: "/sailormoon.png",
+      emoji: "🎨",
+      gradient: `from-[var(--pink-1)] to-[var(--red-2)]/70`,
+      border: `border-[var(--pink-2)]/80`,
+      text: `text-[var(--pink-font)]`,
+      content:
+        "Growing up, I was obsessed with Sailor Moon which led to me always drawing faces with way too big eyes (till date). I love drawing <b>portraits</b>, but in the recent years have gotten more into <b>landscapes</b> and sun/moon aesthetics ☾",
+    },
+    {
+      title: "Music & Choir",
+      emoji: "♪",
+      gradient: `from-[var(--violet-1)] to-[var(--fuchsia-2)]/70`,
+      border: `border-[var(--violet-2)]/80`,
+      text: `text-[var(--violet-font)]`,
+      content:
+        "A Mezzo, cosplaying as an Alto. I have learned that singing with others is an absolutely magical experience that helps me charge my batteries.",
+    },
+    {
+      title: "Emojis",
+      emoji: "🫏",
+      gradient: `from-[var(--orange-1)] to-[var(--yellow-2)]/70`,
+      border: `border-[var(--orange-2)]/80`,
+      text: `text-[var(--orange-font)]`,
+      content:
+        "Since I know that <u><a href='https://emojipedia.org/' target='_blank' rel='noopener noreferrer'>emojipedia</a></u> exists, my life has not been the same. Despite a refused request for a donkey emoji in 2017, I still have a list of emojis I am planning to request at one point.",
     },
   ];
+
   return (
     <div>
       <div className="flex flex-row gap-6 items-center">
+        <h1 className={title()}>
+          <span className="font-mono text-3xl font-light">
+            Things that fuel my creativity
+          </span>
+        </h1>
         <img
           src="/interest.png"
           alt="goose"
           className="h-full w-20 overflow-hidden object-cover object-left"
         />
-        <h1 className={title()}>What fuels my creativity?</h1>
       </div>
-      <div className="flex flex-col mt-12">
-        {interests.map((item, index) => (
-          <Card
-            key={index}
-            className="site-card mb-6 w-full items-stretch md:flex-row items-center gap-10">
-            {item.image ? (
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-16 h-20 object-cover rounded-lg"
-              />
-            ) : (
-              <span className="text-6xl">{item.emoji}</span>
-            )}
-            <div className="flex flex-1 flex-col gap-3">
-              <CardHeader className="w-full items-stretch md:flex-row">
-                <h2>{item.title}</h2>
-              </CardHeader>
-              <CardContent>
-                <div dangerouslySetInnerHTML={{ __html: item.content }}></div>
-              </CardContent>
+
+      <div className="mt-12 space-y-6 background-white">
+        <div className="grid gap-12 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1">
+          {interests.map((item, index) => (
+            <div key={index} className="grid justify-items-end">
+              <Card
+                className={`group col-span-full row-span-full rounded-none border bg-gradient-to-br ${item.gradient} ${item.border} lg:max-w-[28rem] p-0 shadow-sm shadow-current/5 backdrop-blur-sm font-mono hover:shadow-lg hover:scale-[1.01]`}>
+                <div className="flex-1 flex-col items-start p-5 md:p-6 flex min-w-0 gap-3">
+                  <CardHeader className="p-0">
+                    <h2 className={`text-lg font-semibold ${item.text}`}>
+                      {item.title}
+                    </h2>
+                  </CardHeader>
+                  <CardContent className="p-0 text-sm leading-relaxed text-[var(--neutral-text)]">
+                    <div dangerouslySetInnerHTML={{ __html: item.content }} />
+                  </CardContent>
+                  {item.tags && (
+                    <div className="flex flex-wrap gap-2">
+                      {item.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full border border-[var(--neutral-color)]/25 bg-[var(--neutral-color)]/70 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.14em] text-[var(--neutral-text)] backdrop-blur-sm">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </Card>
+              {item.image ? (
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="col-span-full row-span-full z-10 -mt-[20px] -mr-[15px] h-16 w-14 flex-none rounded-xl object-cover rotate-[-15deg] hover:rotate-[5deg] hover:scale-[1.1]"
+                />
+              ) : (
+                <span className="col-span-full row-span-full z-10 -mt-[10px] -mr-[20px] h-14 w-14 items-center rounded-xl text-4xl rotate-[-15deg]  hover:rotate-[10deg] hover:scale-[1.1]">
+                  {item.emoji}
+                </span>
+              )}
             </div>
-          </Card>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
