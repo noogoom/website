@@ -3,6 +3,9 @@
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "./theme-switch";
 import { usePathname } from "next/navigation";
+import { TbBrandLinkedin, TbMail } from "react-icons/tb";
+import { Button } from "@heroui/react";
+import { FiMail } from "react-icons/fi";
 
 export const Navbar = () => {
   const pathname = usePathname();
@@ -15,18 +18,37 @@ export const Navbar = () => {
             {siteConfig.navItems.map((item) => (
               <li
                 key={item.href}
-                className={`transition-colors border-b-2 ${
-                  isActive(item.href)
-                    ? "border-b-[var(--secondary)]"
-                    : "border-transparent hover:text-[var(--on-secondary-background)] hover:bg-[var(--accent-soft)]"
+                className={`nav-item transition-colors border-b-2 ${
+                  isActive(item.href) ? "active" : ""
                 }`}>
-                <a href={item.href} className={`font-medium font-mono`}>
+                <a href={item.href} className="font-medium font-mono">
                   {item.label}
                 </a>
               </li>
             ))}
           </ul>
-          <ThemeSwitch />
+          <div className="flex items-center gap-3">
+            <Button
+              onClick={() =>
+                window.open("mailto:sarahmudor@gmail.com", "_blank")
+              }
+              size="sm"
+              className="nav-action-button">
+              <FiMail />
+            </Button>
+            <Button
+              onClick={() =>
+                window.open(
+                  "https://www.linkedin.com/in/sarah-alaghbari",
+                  "_blank",
+                )
+              }
+              size="sm"
+              className="nav-action-button">
+              <TbBrandLinkedin />
+            </Button>
+            <ThemeSwitch />
+          </div>
         </div>
       </div>
     </nav>

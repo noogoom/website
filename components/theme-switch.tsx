@@ -18,9 +18,10 @@ export function ThemeSwitch() {
     <Button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       className={
-        "bg-[var(--secondary-background)] border-transparent text-[var(--on-secondary-background)] hover:border-[var(--hover-color)]"
+        "text-[var(--on-secondary-background)] hover:bg-[var(--accent-background)]"
       }
-      variant="outline">
+      aria-label={isLightTheme ? "Switch to dark mode" : "Switch to light mode"}
+      variant="ghost">
       {isLightTheme ? (
         <MoonFilledIcon size={22} />
       ) : (

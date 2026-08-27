@@ -10,18 +10,18 @@
     * xx: x-400
     * xx-background: xx-50
     * on-xx-background: xx-900
-    * primary: fuchsia, secondary: orange
+    * primary: pink, secondary: rose/orange
     * https://tailwindcss.com/docs/colors
     */
   &.light,
   [data-theme="light"] {
     color-scheme: light;
-    --accent: oklch(71.8% 0.202 349.761);
+    --accent: var(--color-pink-400);
     --accent-background: oklch(87.731% 0.09624 334.905 / 0.512);
-    --on-accent-background: oklch(40.1% 0.17 325.612);
-    --secondary: oklch(75% 0.183 55.934);
+    --on-accent-background: var(--color-pink-900);
+    --secondary: var(--color-rose-400);
     --secondary-background: oklch(98% 0.016 73.684);
-    --on-secondary-background: oklch(40.8% 0.123 38.172);
+    --on-secondary-background: var(--color-rose-900);
     --neutral-color: white;
     --neutral-border: #99d3ff;
     --neutral-text: var(--color-slate-700);
@@ -60,12 +60,12 @@
   &.dark,
   [data-theme="dark"] {
     color-scheme: dark;
-    --accent: oklch(49.1% 0.27 292.581);
+    --accent: var(--color-violet-600);
     --accent-background: oklch(34.148% 0.14232 284.75);
-    --on-accent-background: oklch(96.9% 0.016 293.756);
-    --secondary: oklch(44.833% 0.2405 286.659);
+    --on-accent-background: var(--color-violet-100);
+    --secondary: var(--color-indigo-600);
     --secondary-background: oklch(18.994% 0.08025 279.708);
-    --on-secondary-background: oklch(97% 0.014 254.604);
+    --on-secondary-background: var(--color-indigo-100);
     --neutral-color: rgba(0, 0, 0, 0.6);
     --neutral-border: rgba(255, 255, 255, 0.1);
     --neutral-text: var(--color-slate-300);
@@ -115,6 +115,29 @@ body {
     font-family: "Merriweather", serif;
     font-weight: 300;
   }
+}
+
+.nav-item {
+  border-color: transparent;
+}
+
+.nav-item:hover {
+  background: var(--accent-soft);
+}
+
+.nav-item.active {
+  border-color: var(--secondary);
+}
+
+.nav-action-button {
+  background: var(--secondary-background);
+  color: var(--on-secondary-background);
+  border-color: transparent;
+}
+
+.nav-action-button:hover {
+  border-color: var(--hover-color);
+  color: var(--hover-color);
 }
 
 .site-card {
