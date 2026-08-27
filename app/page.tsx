@@ -44,28 +44,48 @@ export default function Home() {
   }, []);
 
   const isLightTheme = mounted ? theme === "light" : true;
-
+  const eventItems = [
+    {
+      title: "Currently employed at elevait",
+      position: "Software Engineer",
+      date: "2020 - today",
+      avatar: "<FaBusinessTime />",
+    },
+    {
+      title: "Graduated from TU Dresden",
+      position: "M.Sc. Media Computer Science",
+      date: "2017 - 2020",
+      avatar: "<FaGraduationCap />",
+    },
+    {
+      title: "Graduated from TU Dresden",
+      position: "B.Sc. Media Computer Science",
+      date: "2012 - 2016",
+      avatar: "<FaGraduationCap />",
+    },
+  ];
   return (
     <div className="flex flex-col gap-16 h-full">
-      <header className="flex flex-row gap-6">
+      <header className="flex flex-row gap-6 items-center">
         {isLightTheme ? (
           <Image width={150} alt="Sun" src="/sun.png" />
         ) : (
           <Image width={150} alt="Moon" src="/image.png" />
         )}
         <div className="flex flex-col gap-6">
-          <h1 className="text-4xl">Hi! 🐢</h1>
-          <h2 className="text-2xl text-[hsl(var(--nextui-foreground-600))]">
+          <h1 className="text-4xl">
+            Hi!{" "}
+            <img
+              width={40}
+              src="https://em-content.zobj.net/source/animated-noto-color-emoji/461/turtle_1f422.gif"
+              alt="dancing turtle"
+              className="inline-block"
+            />
+          </h1>
+          <h2 className="text-xl text-[hsl(var(--nextui-foreground-600))]">
             I&apos;m Sarah, a software engineer with a passion for user
-            experience, design, numbers and much more 🀍
+            experience, psychology, and music 🀍
           </h2>
-          <div className="flex gap-4">
-            {chipContents.map((chipContent) => (
-              <Chip key={chipContent} className="pretty-chips text-sm">
-                {chipContent}
-              </Chip>
-            ))}
-          </div>
         </div>
       </header>
       <div className="gap-3 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full">

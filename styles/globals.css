@@ -148,7 +148,7 @@ body {
   /* keep the subtle glass effect if variables are present */
   backdrop-filter: blur(10px);
   padding: 2rem 2.75rem;
-  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.08);
+  box-shadow: none;
   transition:
     transform 0.18s ease,
     box-shadow 0.18s ease,
