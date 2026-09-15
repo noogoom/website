@@ -97,6 +97,15 @@ export default function Work() {
       ],
       tags: ["website", "cms", "content management"],
     },
+    {
+      id: "bachelor_thesis",
+      title:
+        "Bachelor Thesis: Traceability of Electrical Network Frequency (ENF) in audio files for Timestamp Verification",
+      year: "2015–2016",
+      content:
+        "Researched the deviation of ENF and how it could be traced in audio files to verify their timestamp. Recorded own samples with various devices, extracted the ENF with a script in R and successfully compared the results with a recorded reference signal.",
+      tags: ["research", "forensics", "audio analysis", "verification"],
+    },
   ];
   return (
     <div>
